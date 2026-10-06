@@ -25,10 +25,10 @@ export default function BookCard({ libro }) {
       <div>
         <div className="card-top">
           <div className="card-icon-container">
-            <Icon name={libro.icono} />
+            <Icon name={libro.icono} className="icon-sm" />
           </div>
           <span className="card-rating-badge">
-            <Icon name="star" className="card-star icon-sm" />
+            <Icon name="star" className="icon-sm" />
             <span>{libro.calificacion.toFixed(1)}</span>
           </span>
         </div>

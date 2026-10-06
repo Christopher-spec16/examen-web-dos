@@ -1,64 +1,94 @@
 export const books = [
   {
     id: 1,
-    title: 'La arquitectura del detalle',
-    author: 'Ana Rojas',
-    category: 'Arquitectura',
-    year: 2022,
-    rating: 4.9,
-    description:
-      'Un análisis profundo sobre materiales, proporciones y experiencia espacial en proyectos contemporáneos.'
+    titulo: 'Menos es Más',
+    autor: 'Ludwig Mies van der Rohe',
+    categoria: 'Arquitectura',
+    icono: 'landmark',
+    anio: 1947,
+    paginas: 240,
+    calificacion: 4.9,
+    editorial: 'Ediciones Bauhaus',
+    isbn: '978-0140449136',
+    destacado: true,
+    resumen: 'Compilación de reflexiones sobre la eliminación de lo superfluo en la estructura espacial.',
+    descripcion: 'Una exploración profunda del racionalismo constructivo y la pureza formal. El autor argumenta que la claridad formal no es la ausencia de diseño, sino la cúspide de la precisión técnica y compositiva.'
   },
   {
     id: 2,
-    title: 'Tipografía y emoción',
-    author: 'Mateo Silva',
-    category: 'Tipografía',
-    year: 2021,
-    rating: 4.8,
-    description:
-      'Explora cómo la tipografía comunica tono, personalidad y estructura visual en marcas y editoriales.'
+    titulo: 'Diez Principios del Buen Diseño',
+    autor: 'Dieter Rams',
+    categoria: 'Diseño Industrial',
+    icono: 'sliders',
+    anio: 1976,
+    paginas: 180,
+    calificacion: 5.0,
+    editorial: 'Braun Press',
+    isbn: '978-3791387345',
+    destacado: true,
+    resumen: 'Criterios funcionales que definen la honestidad y atemporalidad de un objeto cotidiano.',
+    descripcion: 'Texto fundacional que postula que el buen diseño debe ser innovador, útil, estético, comprensible, discreto, honesto, duradero, minucioso hasta el último detalle, respetuoso con el medio ambiente y diseñado al mínimo.'
   },
   {
     id: 3,
-    title: 'Diseño gráfico para la percepción',
-    author: 'Elena Torres',
-    category: 'Diseño Gráfico',
-    year: 2023,
-    rating: 5.0,
-    description:
-      'Una guía práctica para crear piezas visuales coherentes, memorables y funcionales en distintos medios.'
+    titulo: 'Sistemas de Retículas',
+    autor: 'Josef Müller-Brockmann',
+    categoria: 'Diseño Gráfico',
+    icono: 'layout-grid',
+    anio: 1981,
+    paginas: 176,
+    calificacion: 4.8,
+    editorial: 'Niggli Verlag',
+    isbn: '978-3721201451',
+    destacado: false,
+    resumen: 'Guía sistemática para la organización visual y jerarquización de contenidos textuales.',
+    descripcion: 'Manual definitivo sobre el uso de la retícula como herramienta para resolver problemas visuales en dos y tres dimensiones de forma rigurosa, lógica y objetiva.'
   },
   {
     id: 4,
-    title: 'Espacios para vivir',
-    author: 'Camilo Ortega',
-    category: 'Arquitectura',
-    year: 2020,
-    rating: 4.7,
-    description:
-      'Reflexiona sobre la relación entre el habitar, la luz natural y la organización del movimiento cotidiano.'
+    titulo: 'El Elogio de la Sombra',
+    autor: "Jun'ichiro Tanizaki",
+    categoria: 'Estética',
+    icono: 'moon',
+    anio: 1933,
+    paginas: 112,
+    calificacion: 4.7,
+    editorial: 'Siruela',
+    isbn: '978-8478442584',
+    destacado: false,
+    resumen: 'Ensayo sobre la belleza en la penumbra, la sobriedad y la sutileza de los materiales naturales.',
+    descripcion: 'Reflexión clásica oriental que contrapone la búsqueda occidental de iluminación total con la sensibilidad tradicional japonesa hacia el claroscuro, la pátina del tiempo y la sencillez de los espacios.'
   },
   {
     id: 5,
-    title: 'Líneas de composición',
-    author: 'Irene Castro',
-    category: 'Diseño Industrial',
-    year: 2024,
-    rating: 4.9,
-    description:
-      'Estudio de formas, proporciones y jerarquías visuales aplicadas a productos y objetos de uso diario.'
+    titulo: 'La Nueva Tipografía',
+    autor: 'Jan Tschichold',
+    categoria: 'Tipografía',
+    icono: 'type',
+    anio: 1928,
+    paginas: 216,
+    calificacion: 4.9,
+    editorial: 'Verlag des Bildungsverbandes',
+    isbn: '978-0520071476',
+    destacado: true,
+    resumen: 'Manifiesto sobre la modernidad tipográfica, el uso del blanco y la asimetría funcional.',
+    descripcion: 'Obra clave que introdujo las bases de la tipografía moderna: rechazo del adorno innecesario, preferencia por fuentes sans-serif legibles y una diagramación basada en el ritmo visual y el espacio vacío.'
   },
   {
     id: 6,
-    title: 'Estética y orden',
-    author: 'Sofía Medina',
-    category: 'Estética',
-    year: 2019,
-    rating: 4.6,
-    description:
-      'Un recorrido por la relación entre sensibilidad, matices y equilibrio visual en propuestas artísticas.'
+    titulo: 'Espacio, Tiempo y Arquitectura',
+    autor: 'Sigfried Giedion',
+    categoria: 'Arquitectura',
+    icono: 'box',
+    anio: 1941,
+    paginas: 896,
+    calificacion: 4.6,
+    editorial: 'Harvard University Press',
+    isbn: '978-0674830400',
+    destacado: false,
+    resumen: 'Análisis histórico del desarrollo de las formas puras y los nuevos materiales constructivos.',
+    descripcion: 'Un examen monumental de cómo las transformaciones tecnológicas del siglo XIX y XX moldearon una nueva percepción del espacio habitable libre de ornamentos añadidos.'
   }
 ];
 
-export const categories = ['Todos', 'Arquitectura', 'Diseño Industrial', 'Diseño Gráfico', 'Estética', 'Tipografía'];
+export const categories = ['Arquitectura', 'Diseño Industrial', 'Diseño Gráfico', 'Estética', 'Tipografía'];

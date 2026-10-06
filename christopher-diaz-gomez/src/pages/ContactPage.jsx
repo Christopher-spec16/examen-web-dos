@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PageHero from '../components/PageHero';
 
 const ContactPage = () => {
   const [name, setName] = useState('');
@@ -14,18 +15,19 @@ const ContactPage = () => {
   };
 
   return (
-    <section className="contact-page">
-      <div className="section-header section-header--stacked">
-        <div>
-          <p className="eyebrow">Contacto</p>
-          <h1>Escríbenos</h1>
-        </div>
-      </div>
+    <>
+      <PageHero
+        eyebrow="Contacto"
+        title="Escríbenos"
+        subtitle="Estamos listos para responder dudas sobre la colección, recomendaciones y contenido editorial."
+      />
 
       <div className="contact-layout">
         <div className="contact-info">
           <h2>Atención y consultas</h2>
-          <p>Estamos listos para responder dudas sobre la colección, recomendaciones y contenido editorial.</p>
+          <p>
+            Estamos listos para responder dudas sobre la colección, recomendaciones y contenido editorial.
+          </p>
           <ul>
             <li>📍 Bogotá, Colombia</li>
             <li>📞 +57 310 123 4567</li>
@@ -59,12 +61,12 @@ const ContactPage = () => {
             <textarea rows="5" value={message} onChange={(event) => setMessage(event.target.value)} />
           </label>
 
-          <button type="button" className="primary-button" onClick={handleSend}>
+          <button type="button" className="btn btn-primary" onClick={handleSend}>
             Enviar
           </button>
         </form>
       </div>
-    </section>
+    </>
   );
 };
 

@@ -1,7 +1,12 @@
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <p>Biblioteca Visual © 2025</p>
+      <div className="container footer-content">
+        <span>
+          <strong>Librería Archivo</strong> &bull; Catálogo bibliográfico de diseño
+        </span>
+        <span>Colección abierta para consulta</span>
+      </div>
     </footer>
   );
 };

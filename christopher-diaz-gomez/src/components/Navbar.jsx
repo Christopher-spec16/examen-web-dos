@@ -1,33 +1,40 @@
 import { NavLink } from 'react-router-dom';
+import Icon from './Icon';
 
 const navItems = [
-  { to: '/', label: 'Inicio' },
-  { to: '/catalogo', label: 'Catálogo' },
-  { to: '/contacto', label: 'Contacto' }
+  { to: '/', label: 'Inicio', icon: 'home' },
+  { to: '/catalogo', label: 'Catálogo', icon: 'grid' },
+  { to: '/contacto', label: 'Contacto', icon: 'mail' }
 ];
 
 const Navbar = () => {
   return (
     <header className="site-header">
-      <nav className="navbar" aria-label="Navegación principal">
-        <div className="navbar__brand">
-          <span className="brand-mark">L</span>
-          <span>Biblioteca Visual</span>
-        </div>
+      <div className="container nav-bar">
+        <NavLink to="/" className="brand">
+          <div className="brand-badge">
+            <Icon name="book-open" className="icon-sm" />
+          </div>
+          <span>Librería Archivo</span>
+        </NavLink>
 
-        <div className="navbar__links">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => (isActive ? 'nav-link nav-link--active' : 'nav-link')}
-              end={item.to === '/'}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </div>
-      </nav>
+        <nav aria-label="Navegación principal">
+          <ul className="nav-links">
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === '/'}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  <Icon name={item.icon} className="icon-sm" />
+                  <span>{item.label}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };
