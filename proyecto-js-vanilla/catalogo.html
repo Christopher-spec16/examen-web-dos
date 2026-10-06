@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librería Archivo — Catálogo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">
+          <i data-lucide="book-open"></i>
+        </div>
+        <span>Librería Archivo</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <i data-lucide="home" class="icon-sm"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html" class="active">
+              <i data-lucide="grid" class="icon-sm"></i>
+              <span>Catálogo</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacto.html">
+              <i data-lucide="mail" class="icon-sm"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <section class="hero-banner" style="padding: 28px 36px;">
+        <h1 class="hero-title">Colección de Textos & Documentos</h1>
+        <p class="hero-subtitle">
+          Explora el catálogo completo de publicaciones, ensayos y tratados de diseño.
+        </p>
+      </section>
+
+      <section class="filter-toolbar">
+        <div class="search-group">
+          <i data-lucide="search" class="search-icon-pos icon-sm"></i>
+          <input 
+            type="text" 
+            id="inputBusqueda" 
+            class="search-input" 
+            placeholder="Buscar por título, autor o concepto..." 
+          />
+        </div>
+
+        <select id="selectCategoria" class="select-category">
+          <option value="">Todas las categorías</option>
+        </select>
+
+        <span class="badge badge-neutral" id="conteoResultados">
+          <i data-lucide="layers" class="icon-sm"></i>
+          <span id="textoConteo">Cargando...</span>
+        </span>
+      </section>
+
+      <section>
+        <div class="cards-grid" id="gridCatalogo"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span><strong>Librería Archivo</strong> &bull; Catálogo bibliográfico de diseño</span>
+      <span>Colección abierta para consulta</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

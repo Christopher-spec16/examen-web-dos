@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librería Archivo — Contacto</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">
+          <i data-lucide="book-open"></i>
+        </div>
+        <span>Librería Archivo</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html">
+              <i data-lucide="home" class="icon-sm"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html">
+              <i data-lucide="grid" class="icon-sm"></i>
+              <span>Catálogo</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacto.html" class="active">
+              <i data-lucide="mail" class="icon-sm"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <section class="hero-banner">
+        <h1 class="hero-title">Contacto & Consultas del Archivo</h1>
+        <p class="hero-subtitle">
+          Ponte en comunicación con el equipo de curaduría bibliográfica o solicita acceso a títulos en préstamo especial.
+        </p>
+      </section>
+
+      <section class="contact-layout">
+        
+        <article class="contact-card">
+          <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">
+            Canales de Atención
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Nuestros bibliotecarios e investigadores responden consultas en días hábiles.
+          </p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon-box">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Correo Electrónico</strong>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">contacto@libreria-archivo.org</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-box">
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Teléfono de Sala</strong>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">+57 (604) 444-2020</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-box">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Sede Principal</strong>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Calle 48 #72-10, Edificio Bauhaus</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-box">
+                <i data-lucide="clock"></i>
+              </div>
+              <div>
+                <strong style="display: block; font-size: 0.9rem; color: var(--text-main);">Horario de Consulta</strong>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">Lunes a Viernes: 08:00 - 18:00</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="contact-card">
+          <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">
+            Enviar Mensaje
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px;">
+            Completa el siguiente formulario para radicar tu inquietud.
+          </p>
+
+          <form id="formularioContacto">
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre Completo</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Ej. Ana María Gómez" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input type="email" id="email" class="form-control" placeholder="nombre@ejemplo.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="asunto" class="form-label">Motivo de Consulta</label>
+              <select id="asunto" class="form-control" required>
+                <option value="">Selecciona un motivo...</option>
+                <option value="prestamo">Consulta de libro en sala</option>
+                <option value="donacion">Donación de archivo</option>
+                <option value="investigacion">Apoyo en investigación académica</option>
+                <option value="general">Información general</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea id="mensaje" class="form-control" placeholder="Describe brevemente tu solicitud..." required></textarea>
+            </div>
+
+            <button type="button" id="btnEnviar" class="btn btn-primary" style="width: 100%;">
+              <i data-lucide="send" class="icon-sm"></i>
+              <span>Enviar Formulario</span>
+            </button>
+          </form>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span><strong>Librería Archivo</strong> &bull; Catálogo bibliográfico de diseño</span>
+      <span>Colección abierta para consulta</span>
+    </div>
+  </footer>
+
+  <script src="js/contacto.js"></script>
+</body>
+</html>

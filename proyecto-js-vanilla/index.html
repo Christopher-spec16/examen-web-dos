@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librería Archivo — Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">
+          <i data-lucide="book-open"></i>
+        </div>
+        <span>Librería Archivo</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="active">
+              <i data-lucide="home" class="icon-sm"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="catalogo.html">
+              <i data-lucide="grid" class="icon-sm"></i>
+              <span>Catálogo</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacto.html">
+              <i data-lucide="mail" class="icon-sm"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      
+      <section class="hero-banner">
+        <h1 class="hero-title">Biblioteca de Diseño & Teoría Visual</h1>
+        <p class="hero-subtitle">
+          Colección y catálogo especializado en teoría visual, arquitectura, tipografía y diseño editorial.
+        </p>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="bar-chart-3"></i>
+            <span>Resumen del Repositorio</span>
+          </h2>
+        </div>
+        <div class="stats-grid" id="resumenMetricas"></div>
+      </section>
+
+      <section style="margin-top: 44px;">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i data-lucide="star"></i>
+            <span>Obras Destacadas</span>
+          </h2>
+          <a href="catalogo.html" class="btn btn-outline">
+            <span>Explorar Catálogo Completo</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+        </div>
+        
+        <div class="cards-grid" id="gridDestacados"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span><strong>Librería Archivo</strong> &bull; Catálogo bibliográfico de diseño</span>
+      <span>Colección abierta para consulta</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
