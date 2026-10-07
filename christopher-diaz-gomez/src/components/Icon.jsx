@@ -5,44 +5,59 @@ import {
   BookMarked,
   BookOpen,
   Box,
-  Calendar,
-  Grid2x2,
-  Home,
+  CalendarDays,
+  Clock,
+  FileText,
+  Grid2X2,
+  House,
   Landmark,
+  Layers,
   LayoutGrid,
   Mail,
+  MapPin,
   Moon,
+  Phone,
   Search,
+  Send,
   SlidersHorizontal,
   Star,
   Tag,
   Type,
 } from 'lucide-react';
 
-const iconMap = {
+const icons = {
   'arrow-right': ArrowRight,
   'bar-chart-3': BarChart3,
   book: Book,
   'book-marked': BookMarked,
   'book-open': BookOpen,
   box: Box,
-  calendar: Calendar,
-  'grid': Grid2x2,
-  home: Home,
+  calendar: CalendarDays,
+  clock: Clock,
+  'file-text': FileText,
+  grid: Grid2X2,
+  home: House,
   landmark: Landmark,
+  layers: Layers,
   'layout-grid': LayoutGrid,
   mail: Mail,
+  'map-pin': MapPin,
   moon: Moon,
+  phone: Phone,
   search: Search,
+  send: Send,
   sliders: SlidersHorizontal,
   star: Star,
   tag: Tag,
   type: Type,
 };
 
-const Icon = ({ name, className = '' }) => {
-  const Component = iconMap[name] || BookOpen;
-  return <Component className={className} aria-hidden="true" />;
-};
+export default function Icon({ name, className = '' }) {
+  const LucideIcon = icons[name];
 
-export default Icon;
+  if (!LucideIcon) {
+    throw new Error(`Icono Lucide no configurado: ${name}`);
+  }
+
+  return <LucideIcon aria-hidden="true" className={`lucide ${className}`} />;
+}

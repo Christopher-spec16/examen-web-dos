@@ -4,25 +4,14 @@ import HomePage from '../pages/HomePage';
 import CatalogPage from '../pages/CatalogPage';
 import ContactPage from '../pages/ContactPage';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
-      {
-        index: true,
-        element: <HomePage />
-      },
-      {
-        path: 'catalogo',
-        element: <CatalogPage />
-      },
-      {
-        path: 'contacto',
-        element: <ContactPage />
-      }
-    ]
-  }
+      { index: true, element: <HomePage /> },
+      { path: 'catalogo', element: <CatalogPage /> },
+      { path: 'contacto', element: <ContactPage /> },
+    ],
+  },
 ]);
-
-export default router;
