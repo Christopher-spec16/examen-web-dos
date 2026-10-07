@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage';
 import CatalogPage from '../pages/CatalogPage';
 import ContactPage from '../pages/ContactPage';
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
@@ -15,3 +15,6 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+export { router };
+export default router;

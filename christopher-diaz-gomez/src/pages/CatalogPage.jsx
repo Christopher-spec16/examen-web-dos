@@ -1,86 +1,88 @@
 import { useState } from 'react';
+import { libros } from '../data/libros';
 import BookCard from '../components/BookCard';
-import { books, categories } from '../data/books';
+import Icon from '../components/Icon';
+import PageHero from '../components/PageHero';
 
-const CatalogPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+export default function CatalogPage() {
+  const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const filteredBooks = books.filter((book) => {
-    const matchesCategory = selectedCategory === '' || book.categoria === selectedCategory;
-    const query = searchTerm.toLowerCase().trim();
-    const matchesSearch =
-      query === '' ||
-      book.titulo.toLowerCase().includes(query) ||
-      book.autor.toLowerCase().includes(query) ||
-      book.resumen.toLowerCase().includes(query) ||
-      book.editorial.toLowerCase().includes(query);
+  const categorias = Array.from(new Set(libros.map((libro) => libro.categoria))).sort();
 
-    return matchesCategory && matchesSearch;
+  const resultados = libros.filter((libro) => {
+    const termino = query.toLowerCase().trim();
+    const coincideTexto =
+      libro.titulo.toLowerCase().includes(termino) ||
+      libro.autor.toLowerCase().includes(termino) ||
+      libro.resumen.toLowerCase().includes(termino) ||
+      libro.descripcion.toLowerCase().includes(termino) ||
+      libro.editorial.toLowerCase().includes(termino);
+
+    const coincideCategoria =
+      selectedCategory === '' || libro.categoria === selectedCategory;
+
+    return coincideTexto && coincideCategoria;
   });
 
-  const clearFilters = () => {
-    setSearchTerm('');
+  const limpiarFiltros = () => {
+    setQuery('');
     setSelectedCategory('');
   };
 
   return (
-    <section className="catalog-page">
-      <div className="section-header catalog-header">
-        <h2 className="section-title">
-          <span>Catálogo</span>
-        </h2>
-      </div>
+    <>
+      <PageHero
+        title="Colección de Textos & Documentos"
+        subtitle="Explora el catálogo completo de publicaciones, ensayos y tratados de diseño."
+        compact
+      />
 
-      <div className="catalog-toolbar">
-        <div className="search-field">
+      <section className="filter-toolbar">
+        <div className="search-group">
+          <Icon name="search" className="search-icon-pos icon-sm" />
           <input
             type="text"
-            id="inputBusqueda"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-            placeholder="Buscar por título, autor, editorial o resumen"
-            aria-label="Buscar libros"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            className="search-input"
+            placeholder="Buscar por título, autor o concepto..."
           />
         </div>
 
-        <div className="select-field">
-          <select
-            id="selectCategoria"
-            value={selectedCategory}
-            onChange={(event) => setSelectedCategory(event.target.value)}
-            aria-label="Filtrar por categoría"
-          >
-            <option value="">Todas las categorías</option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="catalog-meta">
-        <span id="textoConteo">{filteredBooks.length} de {books.length} registros</span>
-      </div>
-
-      {filteredBooks.length > 0 ? (
-        <div className="cards-grid cards-grid--catalog">
-          {filteredBooks.map((book) => (
-            <BookCard key={book.id} libro={book} />
+        <select
+          value={selectedCategory}
+          onChange={(event) => setSelectedCategory(event.target.value)}
+          className="select-category"
+        >
+          <option value="">Todas las categorías</option>
+          {categorias.map((categoria) => (
+            <option key={categoria} value={categoria}>
+              {categoria}
+            </option>
           ))}
-        </div>
-      ) : (
-        <div className="empty-state">
-          <p>No se encontraron registros con los filtros actuales.</p>
-          <button type="button" className="btn btn-secondary" onClick={clearFilters}>
-            Limpiar Filtros
-          </button>
-        </div>
-      )}
-    </section>
-  );
-};
+        </select>
 
-export default CatalogPage;
+        <span className="badge badge-neutral">
+          <Icon name="layers" className="icon-sm" />
+          <span>{resultados.length} de {libros.length} registros</span>
+        </span>
+      </section>
+
+      <section>
+        <div className="cards-grid">
+          {resultados.length > 0 ? (
+            resultados.map((libro) => <BookCard key={libro.id} libro={libro} />)
+          ) : (
+            <div className="empty-state">
+              <p>No se encontraron registros con los filtros actuales.</p>
+              <button type="button" className="btn btn-secondary" onClick={limpiarFiltros}>
+                Limpiar Filtros
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
+  );
+}

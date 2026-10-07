@@ -1,73 +1,154 @@
 import { useState } from 'react';
+import Icon from '../components/Icon';
 import PageHero from '../components/PageHero';
 
-const ContactPage = () => {
-  const [name, setName] = useState('');
+export default function ContactPage() {
+  const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [asunto, setAsunto] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
-  const handleSend = () => {
-    setName('');
+  const limpiarFormulario = () => {
+    setNombre('');
     setEmail('');
-    setSubject('');
-    setMessage('');
+    setAsunto('');
+    setMensaje('');
   };
 
   return (
     <>
       <PageHero
-        eyebrow="Contacto"
-        title="Escríbenos"
-        subtitle="Estamos listos para responder dudas sobre la colección, recomendaciones y contenido editorial."
+        title="Contacto & Consultas del Archivo"
+        subtitle="Ponte en comunicación con el equipo de curaduría bibliográfica o solicita acceso a títulos en préstamo especial."
       />
 
-      <div className="contact-layout">
-        <div className="contact-info">
-          <h2>Atención y consultas</h2>
-          <p>
-            Estamos listos para responder dudas sobre la colección, recomendaciones y contenido editorial.
+      <section className="contact-layout">
+        <article className="contact-card">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '8px' }}>
+            Canales de Atención
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>
+            Nuestros bibliotecarios e investigadores responden consultas en días hábiles.
           </p>
-          <ul>
-            <li>📍 Bogotá, Colombia</li>
-            <li>📞 +57 310 123 4567</li>
-            <li>✉️ hola@bibliotecavisual.com</li>
-          </ul>
-        </div>
 
-        <form className="contact-form">
-          <label>
-            Nombre
-            <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
-          </label>
+          <div className="contact-info-list">
+            <div className="contact-info-item">
+              <div className="contact-icon-box">
+                <Icon name="mail" />
+              </div>
+              <div>
+                <strong className="contact-title">Correo Electrónico</strong>
+                <span className="contact-text">contacto@libreria-archivo.org</span>
+              </div>
+            </div>
 
-          <label>
-            Correo electrónico
-            <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
-          </label>
+            <div className="contact-info-item">
+              <div className="contact-icon-box">
+                <Icon name="phone" />
+              </div>
+              <div>
+                <strong className="contact-title">Teléfono de Sala</strong>
+                <span className="contact-text">+57 (604) 444-2020</span>
+              </div>
+            </div>
 
-          <label>
-            Asunto
-            <select value={subject} onChange={(event) => setSubject(event.target.value)}>
-              <option value="">Selecciona un asunto</option>
-              <option value="consulta">Consulta general</option>
-              <option value="pedido">Pedido de catálogo</option>
-              <option value="recomendacion">Recomendación editorial</option>
-            </select>
-          </label>
+            <div className="contact-info-item">
+              <div className="contact-icon-box">
+                <Icon name="map-pin" />
+              </div>
+              <div>
+                <strong className="contact-title">Sede Principal</strong>
+                <span className="contact-text">Calle 48 #72-10, Edificio Bauhaus</span>
+              </div>
+            </div>
 
-          <label>
-            Mensaje
-            <textarea rows="5" value={message} onChange={(event) => setMessage(event.target.value)} />
-          </label>
+            <div className="contact-info-item">
+              <div className="contact-icon-box">
+                <Icon name="clock" />
+              </div>
+              <div>
+                <strong className="contact-title">Horario de Consulta</strong>
+                <span className="contact-text">Lunes a Viernes: 08:00 - 18:00</span>
+              </div>
+            </div>
+          </div>
+        </article>
 
-          <button type="button" className="btn btn-primary" onClick={handleSend}>
-            Enviar
-          </button>
-        </form>
-      </div>
+        <article className="contact-card">
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '8px' }}>
+            Enviar Mensaje
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px' }}>
+            Completa el siguiente formulario para radicar tu inquietud.
+          </p>
+
+          <form aria-label="Formulario de contacto">
+            <div className="form-group">
+              <label htmlFor="nombre" className="form-label">
+                Nombre Completo
+              </label>
+              <input
+                id="nombre"
+                type="text"
+                className="form-control"
+                value={nombre}
+                onChange={(event) => setNombre(event.target.value)}
+                placeholder="Ej. Ana María Gómez"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Correo Electrónico
+              </label>
+              <input
+                id="email"
+                type="email"
+                className="form-control"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="nombre@ejemplo.com"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="asunto" className="form-label">
+                Motivo de Consulta
+              </label>
+              <select
+                id="asunto"
+                className="form-control"
+                value={asunto}
+                onChange={(event) => setAsunto(event.target.value)}
+              >
+                <option value="">Selecciona un motivo...</option>
+                <option value="prestamo">Consulta de libro en sala</option>
+                <option value="donacion">Donación de archivo</option>
+                <option value="investigacion">Apoyo en investigación académica</option>
+                <option value="general">Información general</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="mensaje" className="form-label">
+                Mensaje
+              </label>
+              <textarea
+                id="mensaje"
+                className="form-control"
+                value={mensaje}
+                onChange={(event) => setMensaje(event.target.value)}
+                placeholder="Describe brevemente tu solicitud..."
+              />
+            </div>
+
+            <button type="button" className="btn btn-primary form-submit" onClick={limpiarFormulario}>
+              <Icon name="send" className="icon-sm" />
+              <span>Enviar Formulario</span>
+            </button>
+          </form>
+        </article>
+      </section>
     </>
   );
-};
-
-export default ContactPage;
+}
