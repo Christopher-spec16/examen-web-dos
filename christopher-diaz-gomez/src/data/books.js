@@ -1,4 +1,4 @@
-export const books = [
+export const libros = [
   {
     id: 1,
     titulo: 'Menos es Más',
@@ -12,7 +12,7 @@ export const books = [
     isbn: '978-0140449136',
     destacado: true,
     resumen: 'Compilación de reflexiones sobre la eliminación de lo superfluo en la estructura espacial.',
-    descripcion: 'Una exploración profunda del racionalismo constructivo y la pureza formal. El autor argumenta que la claridad formal no es la ausencia de diseño, sino la cúspide de la precisión técnica y compositiva.'
+    descripcion: 'Una exploración profunda del racionalismo constructivo y la pureza formal. El autor argumenta que la claridad formal no es la ausencia de diseño, sino la cúspide de la precisión técnica y compositiva.',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const books = [
     isbn: '978-3791387345',
     destacado: true,
     resumen: 'Criterios funcionales que definen la honestidad y atemporalidad de un objeto cotidiano.',
-    descripcion: 'Texto fundacional que postula que el buen diseño debe ser innovador, útil, estético, comprensible, discreto, honesto, duradero, minucioso hasta el último detalle, respetuoso con el medio ambiente y diseñado al mínimo.'
+    descripcion: 'Texto fundacional que postula que el buen diseño debe ser innovador, útil, estético, comprensible, discreto, honesto, duradero, minucioso hasta el último detalle, respetuoso con el medio ambiente y diseñado al mínimo.',
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const books = [
     isbn: '978-3721201451',
     destacado: false,
     resumen: 'Guía sistemática para la organización visual y jerarquización de contenidos textuales.',
-    descripcion: 'Manual definitivo sobre el uso de la retícula como herramienta para resolver problemas visuales en dos y tres dimensiones de forma rigurosa, lógica y objetiva.'
+    descripcion: 'Manual definitivo sobre el uso de la retícula como herramienta para resolver problemas visuales en dos y tres dimensiones de forma rigurosa, lógica y objetiva.',
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const books = [
     isbn: '978-8478442584',
     destacado: false,
     resumen: 'Ensayo sobre la belleza en la penumbra, la sobriedad y la sutileza de los materiales naturales.',
-    descripcion: 'Reflexión clásica oriental que contrapone la búsqueda occidental de iluminación total con la sensibilidad tradicional japonesa hacia el claroscuro, la pátina del tiempo y la sencillez de los espacios.'
+    descripcion: 'Reflexión clásica oriental que contrapone la búsqueda occidental de iluminación total con la sensibilidad tradicional japonesa hacia el claroscuro, la pátina del tiempo y la sencillez de los espacios.',
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ export const books = [
     isbn: '978-0520071476',
     destacado: true,
     resumen: 'Manifiesto sobre la modernidad tipográfica, el uso del blanco y la asimetría funcional.',
-    descripcion: 'Obra clave que introdujo las bases de la tipografía moderna: rechazo del adorno innecesario, preferencia por fuentes sans-serif legibles y una diagramación basada en el ritmo visual y el espacio vacío.'
+    descripcion: 'Obra clave que introdujo las bases de la tipografía moderna: rechazo del adorno innecesario, preferencia por fuentes sans-serif legibles y una diagramación basada en el ritmo visual y el espacio vacío.',
   },
   {
     id: 6,
@@ -87,8 +87,6 @@ export const books = [
     isbn: '978-0674830400',
     destacado: false,
     resumen: 'Análisis histórico del desarrollo de las formas puras y los nuevos materiales constructivos.',
-    descripcion: 'Un examen monumental de cómo las transformaciones tecnológicas del siglo XIX y XX moldearon una nueva percepción del espacio habitable libre de ornamentos añadidos.'
-  }
+    descripcion: 'Un examen monumental de cómo las transformaciones tecnológicas del siglo XIX y XX moldearon una nueva percepción del espacio habitable libre de ornamentos añadidos.',
+  },
 ];
-
-export const categories = ['Arquitectura', 'Diseño Industrial', 'Diseño Gráfico', 'Estética', 'Tipografía'];
