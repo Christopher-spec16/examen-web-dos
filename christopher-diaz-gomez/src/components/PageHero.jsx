@@ -1,12 +1,9 @@
-const PageHero = ({ eyebrow, title, subtitle, children }) => {
+export default function PageHero({ title, subtitle, tag, compact = false }) {
   return (
-    <section className="hero-banner">
-      {eyebrow ? <span className="hero-tag">{eyebrow}</span> : null}
+    <section className={`hero-banner${compact ? ' hero-banner-compact' : ''}`}>
+      {tag && <span className="hero-tag">{tag}</span>}
       <h1 className="hero-title">{title}</h1>
-      {subtitle ? <p className="hero-subtitle">{subtitle}</p> : null}
-      {children}
+      <p className="hero-subtitle">{subtitle}</p>
     </section>
   );
-};
-
-export default PageHero;
+}
